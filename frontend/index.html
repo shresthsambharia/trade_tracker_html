@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trade Tracker Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h2>📊 Trade Tracker Hub</h2>
+
+<div class="card">
+  <input id="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  
+</div>
+
+<h3>Balance: ₹<span id="balance">100000</span></h3>
+<h3>Realized P/L: <span id="realizedPL">₹0</span></h3>
+
+<div class="card">
+  <h3>Stocks</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Stock</th>
+        <th>Live Price</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="assetList"></tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h3>Holdings</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Stock</th>
+        <th>Qty</th>
+        <th>Buy Price</th>
+        <th>P / L</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="holdings"></tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h3>📈 Live Price Chart (INFY)</h3>
+  <canvas id="priceChart" height="50" width="30"></canvas>
+</div>
+
+<button onclick="saveToDB()">💾 Save to Database</button>
+
+<script src="script.js"></script>
+</body>
+</html>

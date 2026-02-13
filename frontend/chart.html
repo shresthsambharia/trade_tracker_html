@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trade Tracker Hub | Charts</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+    }
+    header {
+      background: #2b6cb0;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    .feature-card {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 600px;
+    }
+    canvas {
+      max-width: 100%;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📊 Trade Tracker Hub | Live Charts</h1>
+  <p>Track multiple NSE stock prices in real time</p>
+</header>
+
+<section class="features">
+  <!-- Charts will be dynamically added here -->
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const API_KEY = "NHD0P4YBN03BVA7Y";
+  const SYMBOLS = ["INFY.NS", "TCS.NS", "RELIANCE.NS"]; // Add more symbols here
+
+  async function fetchPrice(symbol) {
+    const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${API_KEY}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    if (!data["Global Quote"]) throw new Error("API limit reached or invalid symbol");
+    return parseFloat(data["Global Quote"]["05. price"]);
+  }
+
+  function createChart(canvasId, label) {
+    return new Chart(document.getElementById(canvasId), {
+      type: "line",
+      data: { labels: [], datasets: [{ label, data: [], borderWidth: 2, tension: 0.3 }] },
+      options: { responsive: true, animation: false }
+    });
+  }
+
+  const charts = {};
+  const container = document.querySelector(".features");
+
+  // Create a chart card for each symbol
+  SYMBOLS.forEach(symbol => {
+    const card = document.createElement("div");
+    card.className = "feature-card";
+    card.innerHTML = `<h3>${symbol} Price (₹)</h3><canvas id="${symbol}Chart" width="600" height="300"></canvas>`;
+    container.appendChild(card);
+
+    charts[symbol] = createChart(`${symbol}Chart`, symbol + " Price (₹)");
+  });
+
+  async function updateCharts() {
+    const time = new Date().toLocaleTimeString();
+    for (let symbol of SYMBOLS) {
+      try {
+        const price = await fetchPrice(symbol);
+        const chart = charts[symbol];
+
+        chart.data.labels.push(time);
+        chart.data.datasets[0].data.push(price);
+
+        if (chart.data.labels.length > 10) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+
+        chart.update();
+      } catch (err) {
+        console.error(`Error fetching ${symbol}:`, err.message);
+      }
+    }
+  }
+
+  // Initial update
+  updateCharts();
+
+  // Update every 2 minutes
+  setInterval(updateCharts, 120000);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+
+    <!-- INTERNAL CSS -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #e0eafc, #cfdef3);
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #4338ca;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 30px;
+        }
+
+        .about {
+            background-color: white;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .skills ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
+        .projects {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #1e3a8a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>My Portfolio</h1>
+    <p>Web Developer | Student</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <div class="about">
+        <h2>About Me</h2>
+        <p>
+            Hello! I am a B.Tech student passionate about web development,
+            problem solving, and learning new technologies.
+        </p>
+    </div>
+</section>
+
+<section id="skills" class="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Python, C, C++</li>
+        <li>MySQL, MongoDB</li>
+    </ul>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+        <div class="card">
+            <h3>Trade Tracker Hub</h3>
+            <p>Stock trading simulator with live price tracking.</p>
+        </div>
+
+        <div class="card">
+            <h3>Student Management System</h3>
+            <p>CRUD based system for managing student records.</p>
+        </div>
+
+        <div class="card">
+            <h3>Personal Portfolio</h3>
+            <p>Responsive portfolio using HTML and CSS.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: example@gmail.com</p>
+    <p>Phone: +91-XXXXXXXXXX</p>
+</section>
+
+<footer>
+    <p>© 2026 My Portfolio</p>
+</footer>
+
+</body>
+</html>

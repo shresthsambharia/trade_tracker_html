@@ -1,0 +1,145 @@
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 20px;
+}
+
+h2, h3 {
+  color: #38bdf8;
+}
+
+.card {
+  background: #020617;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  margin: 5px;
+}
+
+button {
+  background: #22c55e;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #1e293b;
+  text-align: center;
+}
+
+canvas {
+  background: #020617;
+  padding: 10px;
+}
+#priceChart {
+  width: 350px !important;
+  height: 200px !important;
+  display: block;
+  margin: 0 auto;
+}
+/* ===== HOME PAGE ===== */
+
+.home-body {
+  background: linear-gradient(to right, #e0eafc, #cfdef3);
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Header */
+.home-header {
+  background: linear-gradient(to right, #1e3a8a, #312e81);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+/* Nav */
+.home-nav {
+  background-color: #4338ca;
+  text-align: center;
+  padding: 10px;
+}
+
+.home-nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero h2 {
+  color: #1e3a8a;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 10px auto;
+  font-size: 16px;
+}
+
+/* Button */
+.btn-primary {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background-color: #1e40af;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.btn-primary:hover {
+  background-color: #312e81;
+}
+
+/* Features */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.feature-card {
+  background-color: white;
+  padding: 20px;
+  width: 220px;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Footer */
+.home-footer {
+  background-color: #1e3a8a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}

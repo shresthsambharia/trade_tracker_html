@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | Trade Tracker Hub</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+      background: #0a3d62;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #1e3799;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #0a3d62;
+      margin-bottom: 10px;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 16px;
+    }
+
+    .contact-box {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .contact-info, .contact-form {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .contact-info div {
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 12px;
+      width: 100%;
+      border: none;
+      background: #1e3799;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0a3d62;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #0a3d62;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Contact Us</h1>
+  <p>We’d love to hear from you</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="dashboard.html">Dashboard</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+  <h2>Get in Touch</h2>
+  <p>
+    If you have any questions, suggestions, or feedback regarding
+    <strong>Trade Tracker Hub</strong>, feel free to contact us using the
+    form below or through our contact details.
+  </p>
+
+  <div class="contact-box">
+
+    <!-- Contact Information -->
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <div>📧 Email: support@tradetrackerhub.com</div>
+      <div>📞 Phone: +91 98765 43210</div>
+      <div>📍 Location: Mumbai, India</div>
+      <div>⏰ Support Hours: Mon – Fri (9 AM – 6 PM)</div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form">
+      <h2>Send a Message</h2>
+      <form onsubmit="sendMessage(event)">
+        <label>Name</label>
+        <input type="text" required>
+
+        <label>Email</label>
+        <input type="email" required>
+
+        <label>Message</label>
+        <textarea required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  © 2026 Trade Tracker Hub | All Rights Reserved
+</footer>
+
+<script>
+  function sendMessage(event) {
+    event.preventDefault();
+    alert("Thank you! Your message has been sent successfully.");
+  }
+</script>
+
+</body>
+</html>
